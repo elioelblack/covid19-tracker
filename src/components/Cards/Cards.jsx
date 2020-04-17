@@ -1,8 +1,14 @@
+/**
+ * Fecha		  COV	     Nombre				      Descripcion
+ * ------------	-------- ------------------- ---------------------------------------------
+ * 16/04/2020	COV-1	 Eliezer Hernandez	  Cards of stadistics
+ * LAST LINE HISTORY
+ */
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import CountUp from 'react-countup';
 import cx from 'classnames';
-
+import { shadows } from '@material-ui/system';
 import styles from './Cards.module.css';
 
 const Info = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
