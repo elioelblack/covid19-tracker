@@ -1,7 +1,7 @@
 # COVID-19 Tracker
-![COVID-19 Tracker](https://i.ibb.co/X87BqVY/Screenshot-2020-04-13-at-10-14-58.png)
+![COVID-19 Tracker](https://github.com/elioelblack/elioelblack.github.io/blob/master/static/media/screenshot-elioelblack.github.io-2020.04.16-23_10_48.png)
 
-### [Live Site](https://covid19statswebsite.netlify.com/)
+### [Live Site](https://elioelblack.github.io/covid19-tracker/)
 
 ## Introduction
 This is a code repository for the corresponding video tutorial. 
