@@ -150,7 +150,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
     };
   
     return (
-      <TableHead>
+      <TableHead style={{backgroundColor:'darkcyan'}}>
         <TableRow>
           {headCells.map((headCell) => (
             <TableCell
