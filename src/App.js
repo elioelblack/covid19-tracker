@@ -3,14 +3,16 @@
  * ------------	-------- ------------------- ---------------------------------------------
  * 16/04/2020	COV-1	 Eliezer Hernandez	  Principal page
  * 26/04/2020	COV-2	 Eliezer Hernandez	  Table Coutries
+ * 27/04/2020	COV-3	 Eliezer Hernandez	  Table Coutries
  * LAST LINE HISTORY
  */
 import React from 'react';
-
+import ReactGA from 'react-ga';
 import { Cards, CountryPicker, Chart, ChartTypeSelect, Footer, TableCountries } from './components';
 import { fetchData, fetchConfirmed } from './api/';
 import styles from './App.module.css';
 import image from './images/covidImage.png';
+
 
 
 class App extends React.Component {
@@ -24,10 +26,11 @@ class App extends React.Component {
   async componentDidMount() {
     const data = await fetchData();
     const tableData = await fetchConfirmed();
-    //console.log(tableData)
-
+    ReactGA.initialize('UA-164693269-1'); // Aqui pones tu ID de seguimiento
     this.setState({ data, tableData });
+    ReactGA.pageview("/covid19-tracker");
   }
+  
 
   handleCountryChange = async (country) => {
     const data = await fetchData(country);
@@ -43,6 +46,8 @@ class App extends React.Component {
   }
 
   render() {
+    ReactGA.pageview("/covid19-tracker");
+    ReactGA.pageview("/");
     const { data, country, chartType, tableData } = this.state;
     //console.log(this.state.tableData)
     return (
