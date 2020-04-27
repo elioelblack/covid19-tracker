@@ -1,3 +1,9 @@
+/**
+ * Fecha		  COV	     Nombre				      Descripcion
+ * ------------	-------- ------------------- ---------------------------------------------
+ * 26/04/2020	COV-2	 Eliezer Hernandez	  Table Coutries
+ * LAST LINE HISTORY
+ */
 import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
@@ -34,6 +40,15 @@ export const fetchCountries = async () => {
 
     return countries.map((country) => country.name);
   } catch (error) {
+    return error;
+  }
+};
+
+export const fetchConfirmed = async () => {
+  try{
+    const {data} = await axios.get(`${url}/confirmed`);
+    return [data];
+  }catch (error){
     return error;
   }
 };
