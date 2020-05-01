@@ -46,8 +46,7 @@ class App extends React.Component {
   }
 
   render() {
-    ReactGA.pageview("/covid19-tracker");
-    ReactGA.pageview("/");
+    
     const { data, country, chartType, tableData } = this.state;
     //console.log(this.state.tableData)
     return (
