@@ -14,7 +14,6 @@ import styles from './App.module.css';
 import image from './images/covidImage.png';
 
 
-
 class App extends React.Component {
   state = {
     data: {},
@@ -29,7 +28,10 @@ class App extends React.Component {
     ReactGA.initialize('UA-164693269-1'); // Aqui pones tu ID de seguimiento
     this.setState({ data, tableData });
     ReactGA.pageview("/covid19-tracker");
-  }
+
+    
+    
+  }//Fin didmount
   
 
   handleCountryChange = async (country) => {
@@ -50,7 +52,7 @@ class App extends React.Component {
     const { data, country, chartType, tableData } = this.state;
     //console.log(this.state.tableData)
     return (
-      <div className={styles.container}>
+      <div className={styles.container}>        
         <img className={styles.image} src={image} alt="COVID-19" />
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />

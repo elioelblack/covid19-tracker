@@ -4,8 +4,8 @@
  * 26/04/2020	COV-2	 Eliezer Hernandez	  Table Coutries
  * LAST LINE HISTORY
  */
-import React,{ useState, useEffect } from 'react';
-import { fetchDailyData } from '../../api';
+import React from 'react';
+//import { fetchDailyData } from '../../api';
 import {makeStyles, useTheme } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import Table from '@material-ui/core/Table';
@@ -192,19 +192,11 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
 //////////////// Pincipal /////////////////////
   const TableCountries = (data) => {
     const classes = useStyles();
-    const [dataTable, setDataTable] = useState({});
+
     let test = data.data[0];
       //console.log(data);
 
-    useEffect(() => {
-      const fetchMyAPI = async () => {
-        const dataTable = await fetchDailyData();
-        
-        setDataTable(dataTable);
-      };
-  
-      fetchMyAPI();
-    }, []);
+    
 
   const classes2 = useStyles2();
   const [page, setPage] = React.useState(0);
@@ -224,14 +216,14 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
   };
   const [order, setOrder] = React.useState('desc');
   const [orderBy, setOrderBy] = React.useState('confirmed');
-  const [selected, setSelected] = React.useState([]);
+
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
     setOrderBy(property);
   };
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+
     
     const DataTable = (test ?
         <TableContainer component={Paper}>
@@ -247,7 +239,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
                 {stableSort(test, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  //const isItemSelected = isSelected(row.name);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
@@ -255,7 +247,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel';
                       hover                     
                       tabIndex={-1}
                       key={row.uid}
-                      selected={isItemSelected}
+                      //selected={isItemSelected}
                     >
                       <TableCell component="th" id={labelId} scope="row" >
                         {row.combinedKey}
